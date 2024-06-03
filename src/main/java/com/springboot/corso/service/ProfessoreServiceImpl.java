@@ -36,6 +36,7 @@ public class ProfessoreServiceImpl implements ProfessoreService {
     }
 
     @Override
+    @Transactional
     public void delete(Integer idProfessore) {
         professoreDAO.delete(idProfessore);
     }
