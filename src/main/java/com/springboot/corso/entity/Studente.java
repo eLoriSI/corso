@@ -2,17 +2,22 @@ package com.springboot.corso.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "studente")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Studente {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private @Id Integer id;
 
     @Column(name = "nome")
     private String nome;
@@ -34,47 +39,4 @@ public class Studente {
         this.listaCorsi = listaCorsi;
     }
 
-    public Studente() {
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCognome() {
-        return cognome;
-    }
-
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public List<Corso> getListaCorsi() {
-        return listaCorsi;
-    }
-
-    public void setListaCorsi(List<Corso> listaCorsi) {
-        this.listaCorsi = listaCorsi;
-    }
 }
